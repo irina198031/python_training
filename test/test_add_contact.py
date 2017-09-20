@@ -15,9 +15,9 @@ def app(request):
 def test_test_add_contact(app):
 
     app.open_home_page()
-    app.login(username="admin", password="secret")
+    app.session.login(username="admin", password="secret")
     app.create_contact(Contact(fname="first", lname="last", homeaddress="address", phone="789456123", email="first.last@gmail.com"))
-    app.logout()
+    app.session.logout()
 
 
 
