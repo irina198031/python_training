@@ -10,7 +10,7 @@ class ContactHelper:
 
     def create(self, contact):
         wd = self.app.wd
-        # init group creation
+        # init contact creation
         wd.find_element_by_link_text("add new").click()
         # fill contact form
         wd.find_element_by_name("firstname").click()
@@ -45,3 +45,9 @@ class ContactHelper:
         wd.find_element_by_name("middlename").clear()
         wd.find_element_by_name("middlename").send_keys("test")
         wd.find_element_by_xpath("//div[@id='content']/form[1]/input[22]").click()
+
+    def count(self):
+        wd = self.app.wd
+        return len(wd.find_elements_by_name("selected[]"))
+
+
