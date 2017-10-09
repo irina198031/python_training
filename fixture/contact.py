@@ -34,17 +34,47 @@ class ContactHelper:
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
         self.contact_cache = None
 
-    def delete_first_contact(self):
+
+    def select_first_contact(self):
         wd = self.app.wd
         wd.find_element_by_name("selected[]").click()
+
+
+    def select_contact_by_index(self, index):
+        wd = self.app.wd
+        wd.find_elements_by_name("selected[]")[index].click()
+
+
+    def delete_first_contact(self):
+
+        self.delete_contact_by_index(0)
+
+
+    def delete_contact_by_index(self, index):
+        wd = self.app.wd
+        #wd.find_element_by_name("selected[]").click()
+        self.select_contact_by_index(index)
         #wd.find_element_by_name("DeleteSel()").click()
         wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
         wd.switch_to_alert().accept()
         self.contact_cache = None
 
-    def edit_first_contact(self):
+    # click on Edit
+    def modify_contact_by_index(self, index):
         wd = self.app.wd
         wd.find_element_by_xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img").click()
+    
+    def modify_first_contact(self):
+        self.modify_contact_by_index(0)
+
+    def edit_first_contact(self):
+        self.edit_group_by_index(0)
+
+
+    def edit_contact_by_index(self, index):
+        wd = self.app.wd
+        self.modify_contact_by_index(index)
+        #wd.find_element_by_xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img").click()
         wd.find_element_by_name("middlename").click()
         wd.find_element_by_name("middlename").clear()
         wd.find_element_by_name("middlename").send_keys("test")
