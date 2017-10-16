@@ -101,9 +101,11 @@ class ContactHelper:
                 firstname = cells[2].text
                 lastname = cells[1].text
                 id = element.find_element_by_tag_name("td").get_attribute("id")
-                all_phones = cells[5].text.splitlines()
-                self.contact_cache.append(Contact(fname=firstname, lname=lastname, id=id, phone=all_phones[0], mobilephone=all_phones[1], workphone = all_phones[2],
-                                                  secondaryphone = all_phones[3]))
+                all_phones = cells[5].text
+                all_emails = cells[4].text
+                self.contact_cache.append(Contact(fname=firstname, lname=lastname, id=id,
+                                                  all_phones_from_home_page=all_phones,
+                                                  all_emails_from_home_page = all_emails))
         return list(self.contact_cache)
 
 
@@ -118,7 +120,11 @@ class ContactHelper:
         workphone = wd.find_element_by_name("work").get_attribute("value")
         mobilephone = wd.find_element_by_name("mobile").get_attribute("value")
         secondaryphone = wd.find_element_by_name("phone2").get_attribute("value")
-        return Contact(fname=fname, lname=lname, id=id, phone=phone, mobilephone=mobilephone, workphone=workphone, secondaryphone=secondaryphone)
+        email = wd.find_element_by_name("email").get_attribute("value")
+        email2 = wd.find_element_by_name("email2").get_attribute("value")
+        email3 = wd.find_element_by_name("email3").get_attribute("value")
+        return Contact(fname=fname, lname=lname, id=id, phone=phone, mobilephone=mobilephone, workphone=workphone, secondaryphone=secondaryphone, email=email,
+                       email2=email2, email3=email3)
 
 
     def open_contact_to_edit_by_index(self, index):
