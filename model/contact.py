@@ -22,7 +22,7 @@ class Contact:
         self.id = id
 
     def __repr__(self):
-        return "%s:%s %s" % (self.id, self.fname, self.lname, self.email)
+        return "%s:%s;%s;%s;%s;%s" % (self.id, self.fname, self.lname, self.homeaddress, self.phone, self.email)
 
 
     def __eq__(self, other):

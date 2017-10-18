@@ -2,13 +2,35 @@
 
 from model.contact import Contact
 from sys import maxsize
+import pytest
+import random
+import string
 
-def test_test_add_contact(app):
+def random_string(prefix, maxlen):
+    symbols = string.ascii_letters + string.digits
+    return prefix + " ".join([random.choice(symbols) for i in range(random.randrange(maxlen))])
+
+
+testdata =  [Contact(fname="", lname="", homeaddress="")] + [
+    Contact(fname=random_string("fname", 5), lname=random_string("lname", 5),
+            homeaddress=random_string("address", 5), phone=random_string("phone", 5), email=random_string("email",5))
+
+    #for fname in ["", random_string("fname", 5)]
+    #for lname in ["", random_string("lname", 5)]
+    #for homeaddress in ["", random_string("homeaddress", 10)]
+    #for phone in ["", random_string("phone", 10)]
+    #for email in ["", random_string("email", 10)]
+    for i in range(5)
+]
+
+@pytest.mark.parametrize("contact", testdata, ids=[repr(x) for x in testdata])
+def test_test_add_contact(app, contact):
+
+
     old_contacts = app.contact.get_contact_list()
-    contact = Contact(fname="first", lname="last", homeaddress="address", phone="789456123", email="first.last@gmail.com")
+    #contact = Contact(fname="first", lname="last", homeaddress="address", phone="789456123", email="first.last@gmail.com")
     app.contact.create(contact)
     app.open_home_page()
-
     assert len(old_contacts) + 1 == app.contact.count()
     new_contacts = app.contact.get_contact_list()
     old_contacts.append(contact)
