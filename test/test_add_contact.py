@@ -1,16 +1,14 @@
 # -*- coding: utf-8 -*-
 
 from model.contact import Contact
-import pytest
-from data.add_contact import constant as testdata
 
 
 
 
-@pytest.mark.parametrize("contact", testdata, ids = [repr(x) for x in testdata])
-def test_test_add_contact(app, contact):
 
+def test_test_add_contact(app, json_contacts):
 
+    contact=json_contacts
     old_contacts = app.contact.get_contact_list()
     #contact = Contact(fname="first", lname="last", homeaddress="address", phone="789456123", email="first.last@gmail.com")
     app.contact.create(contact)
