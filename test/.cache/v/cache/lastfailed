@@ -158,5 +158,6 @@
   "test_add_group.py::test_add_group[{'footer': 'footer8', 'header': 'headerx d G V L e H h i f Q o M l I V z z', 'id': None, 'name': 'nameU z t O'}]": true,
   "test_add_group.py::test_add_group[{'footer': 'footerA J 0 o A 5 5 G n a K o z P T W G J h', 'header': 'headerH q B x 9 H I j', 'id': None, 'name': 'namea R o 7 P u Z b M'}]": true,
   "test_add_group.py::test_add_group[{'footer': 'footeri', 'header': 'headero d Z D', 'id': None, 'name': 'nameJ N s p'}]": true,
+  "test_db_matches_ui.py::test_group_list": true,
   "test_phones.py::test_phones_on_home_page": true
 }
