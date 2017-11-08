@@ -46,6 +46,11 @@ class ContactHelper:
         wd.find_elements_by_name("selected[]")[index].click()
 
 
+    def select_contact_by_id(self, id):
+        wd = self.app.wd
+        wd.find_element_by_css_selector("input[value='%s']" % id).click()
+
+
     def delete_first_contact(self):
 
         self.delete_contact_by_index(0)
@@ -60,10 +65,28 @@ class ContactHelper:
         wd.switch_to_alert().accept()
         self.contact_cache = None
 
+    def delete_contact_by_id(self, id):
+        wd = self.app.wd
+    # wd.find_element_by_name("selected[]").click()
+        self.select_contact_by_id(id)
+    # wd.find_element_by_name("DeleteSel()").click()
+        wd.find_element_by_css_selector("input[value='Delete']").click()
+        #wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
+        wd.switch_to_alert().accept()
+        self.contact_cache = None
+
+
     # click on Edit
     def modify_contact_by_index(self, index):
         wd = self.app.wd
         wd.find_element_by_xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img").click()
+
+    def modify_contact_by_id(self, id):
+        wd = self.app.wd
+        wd.find_element_by_css_selector("a[href='edit.php?id=%s']" % id).click()
+        #wd.find_element_by_xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img").click()
+
+
 
     def modify_first_contact(self):
         self.modify_contact_by_index(0)
@@ -81,6 +104,20 @@ class ContactHelper:
         wd.find_element_by_name("middlename").send_keys("test")
         wd.find_element_by_xpath("//div[@id='content']/form[1]/input[22]").click()
         self.contact_cache = None
+
+
+    def edit_contact_by_id(self, id):
+        wd = self.app.wd
+        self.modify_contact_by_id(id)
+        #wd.find_element_by_xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img").click()
+        wd.find_element_by_name("middlename").click()
+        wd.find_element_by_name("middlename").clear()
+        wd.find_element_by_name("middlename").send_keys("test")
+        wd.find_element_by_xpath("//div[@id='content']/form[1]/input[22]").click()
+        self.contact_cache = None
+
+
+
 
     def count(self):
         wd = self.app.wd
