@@ -1,0 +1,95 @@
+{
+  "uid" : "f389df8257c30f19",
+  "name" : "test_add_group[None:nameE d O F 2 d;headerN 0 g m W 8 g m a R m 8 V C 4 R t I N;footer0 3 B o u]",
+  "title" : "Test add group [None:nameE d O F 2 d;headerN 0 g m W 8 g m a R m 8 V C 4 R t I N;footer0 3 B o u]",
+  "time" : {
+    "start" : 1510873505176,
+    "stop" : 1510873506495,
+    "duration" : 1319
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 3
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "f748101ade59dcd7",
+    "name" : "test.test_add_group",
+    "title" : "Test add group"
+  },
+  "steps" : [ {
+    "name" : "Given a group list",
+    "title" : "Given a group list",
+    "time" : {
+      "start" : 1510873505245,
+      "stop" : 1510873505247,
+      "duration" : 2
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "When I add a group None:nameE d O F 2 d;headerN 0 g m W 8 g m a R m 8 V C 4 R t I N;footer0 3 B o u to the list",
+    "title" : "When I add a group None:nameE d O F 2 d;headerN 0 g m W 8 g m a R m 8 V C 4 R t I N;footer0 3 B o u to the list",
+    "time" : {
+      "start" : 1510873505247,
+      "stop" : 1510873506492,
+      "duration" : 1245
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "Then the new group list is equal to the old list with the added group",
+    "title" : "Then the new group list is equal to the old list with the added group",
+    "time" : {
+      "start" : 1510873506492,
+      "stop" : 1510873506495,
+      "duration" : 3
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  } ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "suite-title",
+    "value" : null
+  }, {
+    "name" : "host",
+    "value" : "HP"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "suite-name",
+    "value" : "test.test_add_group"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "thread",
+    "value" : "5820-MainThread"
+  } ],
+  "parameters" : [ ]
+}

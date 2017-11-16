@@ -1,0 +1,50 @@
+{
+  "uid" : "afa6962fbd9c5276",
+  "name" : "test_add_group[None:namet r;headerZ O c k N y w d w 2 r;footer7]",
+  "title" : "Test add group [None:namet r;headerZ O c k N y w d w 2 r;footer7]",
+  "time" : {
+    "start" : 1510871100672,
+    "stop" : 1510871102173,
+    "duration" : 1501
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 0
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "565b765bbebd085c",
+    "name" : "test.test_add_group",
+    "title" : "Test add group"
+  },
+  "steps" : [ ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "suite-title",
+    "value" : null
+  }, {
+    "name" : "host",
+    "value" : "HP"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "suite-name",
+    "value" : "test.test_add_group"
+  }, {
+    "name" : "thread",
+    "value" : "19976-MainThread"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  } ],
+  "parameters" : [ ]
+}
